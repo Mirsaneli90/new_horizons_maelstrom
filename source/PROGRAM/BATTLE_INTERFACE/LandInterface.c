@@ -387,9 +387,9 @@ void BLI_SetObjectData()
     int fTmp, fTmp2;
 	DeleteAttribute(&objLandInterface,"");
 	objLandInterface.data.riskAlarm = 0;
-	// индикатор тревоги
+	// ГЁГ­Г¤ГЁГЄГ ГІГ®Г° ГІГ°ГҐГўГ®ГЈГЁ
 	objLandInterface.data.alarm = 0.0;
-	// персы вместе с нами
+	// ГЇГҐГ°Г±Г» ГўГ¬ГҐГ±ГІГҐ Г± Г­Г Г¬ГЁ
 	ref mainCh = GetMainCharacter();
 	aref ar;
 	int i,cn;
@@ -409,7 +409,7 @@ void BLI_SetObjectData()
 	}
 
 	BLI_SetMessageParameters();
-	// текстуры
+	// ГІГҐГЄГ±ГІГіГ°Г»
 	int idLngFile = LanguageOpenFile("commands_name.txt");
 	objLandInterface.CommandTextures.list.t0.name = "battle_interface\LandCommands.tga";
 	objLandInterface.CommandTextures.list.t0.xsize = 4;
@@ -470,7 +470,7 @@ void BLI_SetObjectData()
 	objLandInterface.CommandTextures.list.t16.ysize = 16;
 
 	objLandInterface.CommandTextures.CommandTexNum = 0;
-	// список команд
+	// Г±ГЇГЁГ±Г®ГЄ ГЄГ®Г¬Г Г­Г¤
 	objLandInterface.Commands.Cancel.enable			= false;
 	objLandInterface.Commands.Cancel.picNum			= 0;
 	objLandInterface.Commands.Cancel.selPicNum			= 1;
@@ -593,7 +593,7 @@ void BLI_SetObjectData()
 	objLandInterface.Commands.ActivateRush.event	= "BI_ActivateRush";
 	objLandInterface.Commands.ActivateRush.note		= LanguageConvertString(idLngFile, "land_ActivateRush");
 
-	// список пользовательских картинок
+	// Г±ГЇГЁГ±Г®ГЄ ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГјГ±ГЄГЁГµ ГЄГ Г°ГІГЁГ­Г®ГЄ
 		// cancel icon
 	objLandInterface.UserIcons.cancel.enable = true;
 	objLandInterface.UserIcons.cancel.pic = 0;
@@ -723,7 +723,7 @@ void BLI_SetShowParameters()
 	ar.heightHealth = RecalculateVIcon(16);
 	ar.distHealth = RecalculateVIcon(4);
 
-	// высота и отступ для количества зарядов пистолета
+	// ГўГ»Г±Г®ГІГ  ГЁ Г®ГІГ±ГІГіГЇ Г¤Г«Гї ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  Г§Г Г°ГїГ¤Г®Гў ГЇГЁГ±ГІГ®Г«ГҐГІГ 
 	ar.GunShootHeight = RecalculateHIcon(16);
 	ar.GunShootSpace = RecalculateVIcon(2);
 
@@ -1639,11 +1639,11 @@ bool SetUsedPotionIcons()
 			UI_name = "potion"+UI_idx;
 			objLandInterface.UserIcons.(UI_name).enable = true;
 			nPicNum = GetPotionPicture(arItm);
-			objLandInterface.UserIcons.(UI_name).pic = nPicNum;
+			objLandInterface.UserIcons.(UI_name).pic = 10;
 			nTexNum = GetPotionTexture(arItm);
 			objLandInterface.UserIcons.(UI_name).tex = nTexNum;
 			if(nTexNum==4){
-				objLandInterface.UserIcons.(UI_name).selpic = nPicNum + 2;
+				objLandInterface.UserIcons.(UI_name).selpic = nPicNum + 8;
 			}
 			else {
 				objLandInterface.UserIcons.(UI_name).selpic = nPicNum + 1;
